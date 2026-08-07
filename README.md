@@ -14,9 +14,6 @@ partners of GBlock. It explains what the club is, how access works, what each
 role and status means, and how to move through the platform as a buyer, seller,
 guarantor, or ambassador.
 
-It does **not** contain source code, internal architecture, deployment, or
-operational details. Those live in the private engineering workspace.
-
 ---
 
 ## Start here
