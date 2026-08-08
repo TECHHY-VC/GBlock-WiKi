@@ -59,7 +59,7 @@ fully anonymous to KYC-verified.
 |---|---|---|
 | **Anonymous** | Default for everyone | View dealflow, act as a buyer (requires one guarantor, any tier). **Cannot create sale blocks.** |
 | **Vouched** | Two or more active guarantees where **both** guarantors are Verified | Full secondary-market access: create sale blocks, participate in deal threads. |
-| **Verified** | Pass KYC through the external provider (purpose: `member_participation`) | Full access with no guarantor requirement, plus primary-listing eligibility and faster operator service levels. |
+| **Verified** | Pass KYC | Full access with no guarantor requirement, plus primary-listing eligibility and faster operator service levels. |
 
 ### Why Trust Tier matters even if you are a Resident
 
