@@ -112,7 +112,13 @@ Referral reward candidates, each in one of these states:
 - **Released** (paid out)
 - **Suppressed** (held back due to a conduct or policy issue)
 
-Rewards are paid only from confirmed non-transactional TECH HY revenue.
+Rewards are paid only from confirmed non-transactional TECH HY revenue, and
+credited to your reward balance monthly on the 1st.
+
+Members who registered after clicking a link to one of your Data Rooms appear
+here as **silent referrals** — attributed to you like any other referral, with
+no obligations on either side. See
+[Silent Data Room referrals](11-silent-dr-referral.md).
 
 ### Guarantee Board
 
@@ -157,10 +163,50 @@ The Virtual Data Room for a project you are representing. From here you:
 - Toggle download permissions.
 - Revoke access.
 - View the project's scoring report (Potential 0-150 + Readiness 0-150).
+- Publish to the public catalog (requires a valid scoring and a completed
+  company profile).
+- Close the room — **delete permanently** (documents removed, grants revoked,
+  slot freed) or **archive** (investors keep read access, slot stays taken).
+
+Room documents carry a layered watermark (a visible layer plus a forensic
+layer) so leaked material can be traced. _Rolling out._
 
 <p align="center">
   <img src="../images/dataroom.png" alt="Data room interface" width="720" />
 </p>
+
+### Project catalog
+
+The public catalog of published projects. A room appears here only with a
+**valid scoring and a completed company profile**. If a scoring expires, the
+room leaves the catalog and its report placeholder is marked as expired until
+renewed — the room itself keeps working for investors who already have access.
+
+### Wallet
+
+Your balances and money movements:
+
+- **Reward balance:** referral rewards land here in a monthly batch on the
+  1st of the month. You can move rewards into your payment balance (a 3% fee
+  applies).
+- **Payment balance:** funds for platform purchases such as project scoring,
+  topped up by card (bonus tiers start above $150).
+- **Payout requests:** withdrawals are requested from the wallet and reviewed
+  by the operator — there is no self-service withdrawal. Minimum $50, USDT
+  BEP-20, $150 per-request cap without KYC. See
+  [Payouts and rewards](10-payouts-and-rewards.md).
+
+If your founder functions are not active yet, the payment block is visible but
+the top-up button is locked, with a hint that creating a Data Room activates
+it. _Rolling out._
+
+### Support
+
+The contact-operator surface. You open a ticket with a subject and a
+description; the operator responds within one business day. Payout requests
+are handled through the same reviewed pipeline, with their own payout SLA
+(response in 1 business day, payout within 3 business days, transaction hash
+in the completion notification).
 
 ### Scoring report
 
@@ -186,10 +232,12 @@ your identity is not exposed to the subject of the complaint.
 
 ### Settings and 2FA
 
-- **Settings:** account preferences.
-- **2FA:** voluntary TOTP two-factor authentication. Enabling it adds a 0.1x
-  reputation accrual bonus and strengthens account security. Enabling,
-  verifying, and disabling 2FA all require re-authentication.
+- **Settings:** account preferences, including account deletion request.
+- **2FA:** TOTP two-factor authentication. Enabling it adds a 0.1x reputation
+  accrual bonus and strengthens account security. Enabling, verifying, and
+  disabling 2FA all require re-authentication. All members are expected to
+  keep 2FA enabled — see
+  [Trust and safety](07-trust-and-safety.md#two-factor-authentication).
 
 ---
 
@@ -224,4 +272,5 @@ identity model as the cabinet.
 
 - **The rules behind what you see:** [User roles and statuses](02-user-roles-and-statuses.md)
 - **Step-by-step flows on every page above:** [User journeys](04-user-journeys.md)
+- **Balances, payouts, and rewards:** [Payouts and rewards](10-payouts-and-rewards.md)
 - **The security model behind the cabinet:** [Trust and safety](07-trust-and-safety.md)

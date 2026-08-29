@@ -24,6 +24,18 @@ You are never forced to complete KYC. Anonymous members can accumulate Volume
 and act as buyers indefinitely. KYC is a choice to unlock fuller access and
 faster service, not a condition of membership.
 
+**One identity, one verification.** GBlock enforces one verified identity per
+person. If the identity you submit at KYC is already attached to an active
+member account, the new verification is declined ("already verified") —
+accounts are not merged, and re-verifying under a duplicate is not a way
+around it.
+
+**If KYC is revoked.** Losing verified status does not destroy your history.
+Data Rooms beyond what your remaining status allows are archived (investors
+with existing grants keep reading; new grants are not issued), your existing
+welcome grant and earned reputation stay as they are, and new
+verification-gated actions are paused until you re-verify.
+
 For projects, KYB (Know Your Business) and project-level KYC are required for
 primary-market listings.
 
@@ -116,8 +128,10 @@ something wrong, report it. The system is designed to protect you for doing so.
 
 ## Two-factor authentication
 
-2FA is voluntary at every tier. It protects your account and adds a 0.1x
-reputation accrual bonus.
+2FA protects your account and adds a 0.1x reputation accrual bonus. All
+members are expected to keep it enabled — it is part of being a member in good
+standing, and enforcement is being extended across every account class.
+_Rolling out._
 
 - **Method:** TOTP (Time-based One-Time Password), compatible with standard
   authenticator apps.
@@ -130,6 +144,32 @@ reputation accrual bonus.
 Because 2FA sits on top of magic-link authentication, an attacker would need
 both your email access and your authenticator device to compromise your
 account. Enable it.
+
+---
+
+## Contact checks in deal threads
+
+Deal threads are the governed channel for buyer-seller communication, and the
+platform runs an automated **contact verification check** on messages to keep
+negotiations inside that channel.
+
+- Messages that look like they contain direct contact data — emails, phone
+  numbers, messenger handles, or links to external messengers — are
+  **quarantined**: held back from the counterparty and queued for operator
+  review.
+- Quarantine applies **until the deal contract is signed**. After
+  `contract_signed`, exchanging contacts is legitimate: the warning stays, the
+  quarantine stops. _Rolling out._
+- If a message is held, the **recipient sees a neutral cover** ("message held
+  by contact verification") — not your text. You, the sender, still see your
+  own message and its status. The operator can review the full content.
+- The detector is being extended with broader language matching (transliterated
+  text, lookalike Latin/Cyrillic characters, slang abbreviations for
+  messengers, and simple separators between characters). This trades some
+  false positives for coverage. _Rolling out._
+
+The practical rule: keep negotiations in the thread until the contract is
+signed.
 
 ---
 
@@ -150,11 +190,33 @@ restriction. Restrictions can result from:
 - A failed probation (yours or one you guaranteed).
 - Operator action following a sustained complaint.
 - Repeated trust violations.
+- A flagged referral pattern (for example, self-referrals or clusters of
+  registrations from the same device or network). Payouts in the flagged
+  chain are frozen until the review completes.
 
 Standing is visible on your cabinet home. If you are restricted, the cabinet
 explains the nature of the restriction and what it affects. Restrictions are
 not secret; the goal is for you to always know where you stand and what to do
 to recover.
+
+---
+
+## Inactivity, deletion, and your data
+
+**Sleep lifecycle.** Accounts that go quiet move through an inactivity
+lifecycle: a warning phase, then deactivation (your public profile and
+artifacts are unpublished), then deletion if you stay inactive. Founder
+functions are frozen while an account sleeps — payments and new Data Rooms
+pause, existing rooms keep working for people who already have access. Logging
+back in stops the clock.
+
+**Deleting your account.** You can request account deletion from Settings.
+Deletion is **cascading**: Data Rooms you own are removed with your account.
+Deletion is **blocked while you have active deals or unresolved payouts** —
+settle or close those first.
+
+**Brand-styled error pages.** Platform errors (403/404/500) surface as
+brand-styled pages with guidance, not raw framework errors. _Rolling out._
 
 ---
 
@@ -181,3 +243,4 @@ role: discovery, verification, mediated introductions, and governed access.
 - **The rules behind probation and guarantors:** [User roles and statuses](02-user-roles-and-statuses.md)
 - **The numbers behind reputation and the 2FA bonus:** [Reputation economy](05-reputation-economy.md)
 - **The flows that use re-authentication:** [User journeys](04-user-journeys.md)
+- **How payouts are reviewed and protected:** [Payouts and rewards](10-payouts-and-rewards.md)

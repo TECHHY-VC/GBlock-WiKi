@@ -10,11 +10,16 @@ and what to do if you do not have an invitation yet.
 
 | Path | Who it is for | What it gets you |
 |---|---|---|
-| **Member invitation** | People invited by an existing Resident or Ambassador | Registered status, onboarding |
-| **Ambassador self-registration** | Community builders who want to grow the network | Ambassador status (invitations + referral rewards, no dealflow) |
-| **Resident guarantee** | Existing members ready to enter dealflow | Resident status (dealflow, blocks, guarantees) |
+| **Member invitation** | People invited by an existing member | Registered status, the invite welcome grant (40 reputation + 1 vouch), onboarding |
+| **Ambassador self-registration** | Community builders who want to grow the network | Ambassador role (invitations + referral rewards, no dealflow) |
+| **Resident waitlist** | Members ready to enter dealflow | Resident status (dealflow, blocks, vouching) |
 | **Founding operator grant** | The bootstrap cohort, selected by the operator | Resident status, Verified Trust Tier, 14-day probation |
 | **Community request** | Anyone without an invitation | A way to ask the community for one |
+
+There is also an informal sixth door: clicking a member's **Data Room link**
+and registering. That route attributes you to the member who shared the room
+(silently, with no obligations for either side) — see
+[Silent Data Room referrals](11-silent-dr-referral.md).
 
 The first two are open to anyone who can reach them. The third requires you to
 already be inside GBlock. The fourth is operator-driven and not openly
@@ -43,8 +48,12 @@ This is the most common entry. An existing member with the right to invite
 - The magic link is signed, single-use, and expires after 30 minutes.
 - Login responses are generic on purpose. GBlock does not reveal whether an
   email is already registered, to prevent email enumeration.
+- **Welcome grant:** a direct registration starts with 30 reputation. An
+  invite-activated registration starts with **40** (the +10 invite bonus) plus
+  **1 vouch gift** — a real vouch that counts toward Resident status.
 - The inviter's staked Power is returned when your invitation activates or
-  expires. If you misbehave, the inviter may face reputation impact.
+  expires, and the reputation they staked is restored. If you misbehave, the
+  inviter may face reputation impact.
 
 <p align="center">
   <img src="../images/auth-desktop.png" alt="Magic link authentication — desktop" width="560" />
@@ -66,12 +75,13 @@ the public landing page.
 
 - The right to send invitations.
 - Referral attribution and reward eligibility when your invitees contribute.
-- A starting Volume and Power floor of 30 / 30.
+- The standard welcome grant (30 reputation; 40 with an invite, plus 1 vouch).
 
 **What you do NOT get:**
 
 - Ambassador status alone does **not** grant dealflow access. To see blocks,
-  place blocks, or enter deal threads, you also need to become a Resident.
+  place blocks, or enter deal threads, you also need to become a Resident
+  through the waitlist.
 
 **How to apply:**
 
@@ -85,24 +95,32 @@ and network builders who can reach relevant audiences.
 
 ---
 
-## Path 3: Resident guarantee
+## Path 3: Resident waitlist
 
-If you are already inside GBlock as a Registered member or an Ambassador and
-you want market access, you need a guarantee from an active Resident.
+If you are already inside GBlock and you want market access, Resident status
+goes through the **waitlist**. It is the only path to Resident, and it is open
+to every registered member — including Ambassadors — once you have completed
+KYC.
 
 **How it works:**
 
-1. Open the **Guarantee Board** in your cabinet and request a guarantee.
-2. An active Resident accepts your request. They stake 10 Power as collateral,
-   and you enter a 30-day probation period.
-3. On successful completion of probation, your status becomes Resident and you
-   gain dealflow, block, and guarantee rights.
+1. Join the waitlist from your cabinet.
+2. Collect **two vouches from KYC-verified members, at least one of whom is a
+   Resident**. Your first vouch can come from any KYC-approved member; the
+   decisive second vouch must come from a KYC-verified Resident. An invitation
+   vouch gift counts as a real vouch.
+3. Each vouch credits reputation to both sides: +10 to you, +5 to the member
+   who vouched for you. Your voucher also stakes part of their reputation
+   capacity, so vouches are never casual — see
+   [Reputation economy - Vouches](05-reputation-economy.md#vouches).
+4. When your two qualifying vouches are in place, your status becomes Resident
+   and you gain dealflow, block, and vouching rights.
 
-A founding-grant Resident who has completed their 14-day probation can also act
-as your guarantor.
+A founding-grant Resident who has completed their 14-day probation can also
+act as your (decisive) voucher.
 
-Full mechanics, including what happens if you violate trust during probation,
-are in [User journeys - Guarantee a member](04-user-journeys.md#guarantee-a-member)
+Full mechanics, including what happens when a vouch is reworked, are in
+[User journeys - Guarantee a member](04-user-journeys.md#guarantee-a-member)
 and [Trust and safety - Probation](07-trust-and-safety.md#probation).
 
 ---
