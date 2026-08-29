@@ -32,6 +32,8 @@ self-contained, so you can also jump straight to the topic you need.
 | 7 | [Trust and safety](docs/07-trust-and-safety.md) | KYC, re-authentication, complaints, probation, device alerts, 2FA. |
 | 8 | [Glossary](docs/08-glossary.md) | Plain-language definitions of every GBlock term. |
 | 9 | [Roadmap and stage](docs/09-roadmap-and-stage.md) | Current stage, what is live, what is planned, what is explicitly out of scope. |
+| 10 | [Payouts and rewards](docs/10-payouts-and-rewards.md) | Reward and payment balances, how payouts work (operator-reviewed requests), limits, SLA, and the monthly reward schedule. |
+| 11 | [Silent Data Room referrals](docs/11-silent-dr-referral.md) | How sharing a Data Room link grows the network, and what silent referral attribution means for you. |
 
 ---
 
@@ -92,7 +94,9 @@ Read the full compliance boundary in
 │   ├── 06-platform-tour.md
 │   ├── 07-trust-and-safety.md
 │   ├── 08-glossary.md
-│   └── 09-roadmap-and-stage.md
+│   ├── 09-roadmap-and-stage.md
+│   ├── 10-payouts-and-rewards.md
+│   └── 11-silent-dr-referral.md
 ├── images/                ← platform screenshots used in the guide
 └── brand/                 ← logo and brand reference assets
 ```
@@ -103,7 +107,13 @@ Read the full compliance boundary in
 
 GBlock is currently in the **PRE_MARKET_INTERNAL_UAT** stage: a controlled,
 invitation-only, pre-market phase. Functionality described here reflects the
-live product unless a section is explicitly marked as _planned_ or _roadmap_.
+live product unless a section is explicitly marked as _planned_, _roadmap_, or
+_rolling out_.
+
+Where the product model has recently changed, this wiki describes the target
+model: entries marked _rolling out_ are canon policy that is being switched on
+in stages, and entries marked _planned_ are not yet available to members. See
+[Roadmap and stage](docs/09-roadmap-and-stage.md) for the live/planned split.
 
 This wiki describes the member experience. It intentionally omits internal
 architecture, source code, deployment, and operational procedures.
