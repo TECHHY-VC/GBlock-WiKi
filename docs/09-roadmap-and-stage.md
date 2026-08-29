@@ -49,21 +49,59 @@ external partnerships and regulatory positioning.
 
 The following are part of the current live experience for members:
 
-- Invitation-based onboarding via magic link.
+- Invitation-based onboarding via magic link, with the welcome grant (30
+  starting reputation; 40 plus a vouch gift via invitation).
 - Member cabinet: home, profile, interests, reputation, notifications.
-- Statuses: Registered, Ambassador, Resident, Ambassador-Resident.
+- Statuses: Registered, Ambassador, Resident, Ambassador-Resident. Ambassador
+  as the default starting role.
 - Trust Tiers: Anonymous, Vouched, Verified (via KYC).
-- Canonical Tier Catalog and the reputation economy (Volume and Power).
+- Canonical Tier Catalog and the reputation economy (Volume and Power), with
+  the final tier ladder Verified → Core → Principal → Partner → Vanguard at
+  rates 10 / 13 / 17 / 20 / 25%.
 - Guarantees and probation, including the Trust Gate for sale blocks.
 - Sale blocks: draft, submit, review, active, stale, expired, removed,
   rejected, archived.
 - Dealflow browsing, access requests, buyer interest.
-- Mediated deal threads.
-- Data Room: owner-controlled document storage, access grants, scoring report.
+- Mediated deal threads with automated contact checks on messages.
+- Data Room: owner-controlled document storage, access grants, scoring report,
+  scoring-expiry placeholders in the project catalog.
+- Wallet: reward and payment balances, card top-ups, reward-to-payment
+  transfers, monthly reward crediting on the 1st, and daily balance
+  reconciliation against the reward ledger.
+- **Payouts through operator-reviewed requests.** Self-service withdrawal has
+  been removed: payout requests go through the support pipeline (minimum $50,
+  USDT BEP-20, $150 per-request cap without KYC) with transaction-hash
+  notifications.
+- Support tickets to the operator.
 - Complaints (safe reporting flow).
-- 2FA (voluntary TOTP, with accrual bonus).
+- 2FA (TOTP, with accrual bonus).
 - Device alerts for unrecognized logins.
 - Read-only API (v1).
+
+---
+
+## Rolling out
+
+These are confirmed parts of the product model that are being switched on in
+stages. Some members may already see them; not everyone does yet. They are
+described throughout this wiki with a _rolling out_ marker.
+
+- **Founder functions as a silent flag.** Automatic activation on first Data
+  Room creation, lifelong, no badge — unlocking top-ups and scoring purchases,
+  with the locked-wallet hint for everyone else.
+- **Data Room limits and the catalog gate.** One reusable free primary-market
+  room per member; unlimited rooms with valid scoring (one scoring = one
+  room); unlimited secondary-market rooms for KYC-verified Residents; catalog
+  listing requires valid scoring plus a completed company profile; the
+  permanent-delete vs archive choice with its slot semantics.
+- **Payout SLA clocks.** The 1-business-day response / 3-business-day payout
+  targets as enforced queue metrics.
+- **2FA enforcement for all members.**
+- **Contact-check extensions.** Quarantine ending at contract signing,
+  neutral covers for recipients, and broader language matching in the
+  detector.
+- **Layered document watermarking** (visible + forensic) in Data Rooms.
+- **Referral tree and reward history** in the cabinet.
 
 ---
 
@@ -73,12 +111,22 @@ The following are in active development or design and are **not** yet live.
 They are described here so members know what is coming, but they should not be
 relied on today.
 
+- **Silent Data Room referral analytics.** The attribution model is defined
+  (last touch across all channels, ambassador-ladder economics, anti-abuse
+  review) and described in
+  [Silent Data Room referrals](11-silent-dr-referral.md); the engine and the
+  founder-facing link metrics are being built.
+- **Unified Data Room + scoring flow.** One dataset for both: creating a room
+  produces a scoring draft for the same company, with shared company fields
+  feeding the public catalog card.
 - **Self-service Data Room to Primary Market listing.** A flow where a member
   creates a data room from the cabinet, the project is scored automatically,
   and it is listed as a primary-market draft that enters operator eligibility
   review. Investors would then view the public room, express interest, and
-  request access. This is the most significant in-flight change to the project
-  axis.
+  request access.
+- **KYC deduplication and revocation handling** as enforced platform checks
+  (duplicate identities declined; revoked verifications archiving excess
+  rooms while preserving existing grants).
 - **API expansion.** The current API is read-only. Broader surface area is
   under consideration, with re-authentication and operator review applied to
   any mutating action.
@@ -128,3 +176,4 @@ internal system of record.
 - **Start from the top:** [What is GBlock](01-what-is-gblock.md)
 - **Who can do what, today:** [User roles and statuses](02-user-roles-and-statuses.md)
 - **The definitions behind every term above:** [Glossary](08-glossary.md)
+- **Balances and payouts:** [Payouts and rewards](10-payouts-and-rewards.md)

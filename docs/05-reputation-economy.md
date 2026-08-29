@@ -50,10 +50,15 @@ Reputation Tier is derived from Volume. The canonical catalog
 | Tier | Volume range | Reward rate | Power recharge time |
 |---|---|---|---|
 | **Verified** | 0 - 49 | 10% | 168 hours |
-| **Core** | 50 - 149 | 17.5% | 120 hours |
-| **Partner** | 150 - 349 | 20% | 72 hours |
-| **Principal** | 350 - 999 | 25% | 24 hours |
-| **Vanguard** | 1000+ | 25% | 12 hours |
+| **Core** | 50 - 149 | 13% | 120 hours |
+| **Principal** | 150 - 349 | 17% | 72 hours |
+| **Partner** | 350 - 749 | 20% | 24 hours |
+| **Vanguard** | 750+ | 25% | 12 hours |
+
+The ladder has no ceiling: Vanguard starts at 750 Volume and 25% is the
+maximum direct reward rate. The recharge times double as the reputation
+recovery cooldown after a penalty or a reworked vouch (168/120/72/24/12 hours
+by tier).
 
 ### How to read the catalog
 
@@ -106,6 +111,76 @@ effective throughput grows.
 
 ---
 
+## Vouches
+
+Vouches are the second backing instrument. They are how waitlist candidates
+reach **Resident** status, and they move real reputation.
+
+### How vouching works
+
+- Vouching for a member credits **+10 reputation to them** and **+5 to you**.
+- Creating a vouch stakes **10 of your Volume capacity**. Net of your +5
+  reward, a vouch costs you 5 net capacity — vouches are never free.
+- Your vouch limit is derived from your Volume: **your Volume capacity divided
+  by ten, rounded down**. There are no separate per-tier caps. When your
+  capacity is low, you have fewer vouches to give.
+- The first vouch of a waitlist candidate can come from **any KYC-approved
+  member**; the decisive second vouch — the one that completes Resident
+  status — must come from a **KYC-verified Resident**.
+
+### If a vouch goes wrong
+
+A vouch can be reworked (withdrawn because the vouched member violated
+trust):
+
+- The staked Volume capacity is **not** returned.
+- The vouched member's gained reputation is clawed back, plus an extra 1-point
+  penalty for the voucher.
+- Negative reputation events of the member you vouched for propagate to you at
+  **50%** while your vouch is active.
+- Two or more reworks in a rolling 30 days put your vouching on hold and queue
+  the case for operator review.
+
+The rules are deliberately asymmetric: vouching earns modestly, but backing
+the wrong person costs you real reputation.
+
+---
+
+## Reward rates and the referral ladder
+
+The reward rate from the tier catalog is the **direct** (first-level) share of
+confirmed non-transactional TECH HY revenue allocated to you when a
+rewardable event occurs — a scoring purchase, development or consulting work,
+or any other sale attributable to your referral.
+
+On top of the direct ladder:
+
+- **Multi-level overrides:** 6% for second-level referrals, 3% for third-level,
+  1% for fourth-level (for members with KYC).
+- **Top-leaders pool:** 5% of rewardable revenue is pooled and distributed
+  monthly among the top ambassadors.
+- **Top-ambassador bonus:** the leading ambassador of each month receives an
+  additional bonus.
+
+Rewards are never paid from transaction volume, because GBlock does not settle
+transactions. A 5% reserve is held back for refunds and compensations; this is
+an internal accounting figure, not a member-facing number.
+
+### How rewards reach you
+
+- Reward accruals are credited to your **reward balance** in a monthly batch
+  on the **1st of the month**.
+- There is no self-service withdrawal: moving rewards off-platform happens
+  through a reviewed **payout request** (minimum $50, USDT BEP-20; without KYC
+  a single request is capped at $150). See
+  [Payouts and rewards](10-payouts-and-rewards.md).
+- You can move rewards into your payment balance yourself (a 3% fee applies);
+  moving payment balance back into rewards is an operator-reviewed request.
+- Balances are reconciled daily against the reward ledger; any discrepancy
+  alerts the operator before anything is paid out.
+
+---
+
 ## How Volume grows
 
 Volume is an append-only ledger of positive contributions. The exact accrual
@@ -142,6 +217,7 @@ Reputation is not a vanity score. It translates directly into capability.
 |---|---|
 | Higher reward rate on non-transactional revenue | Reputation Tier |
 | Faster Power recharge, so more invites and guarantees per period | Reputation Tier |
+| More vouches you can give (capacity divided by ten) | Volume (Reputation Tier) |
 | Shorter operator review SLA | Trust Tier (Verified at 24h, Vouched at 48h, Anonymous at 72h) |
 | Higher reputation accrual rate | Trust Tier + 2FA |
 | Eligibility to act as guarantor on the Vouched path | Trust Tier (Verified only) |
@@ -175,10 +251,20 @@ place a block.
 No. GBlock does not settle transactions. Rewards are paid only from confirmed
 non-transactional TECH HY revenue.
 
+**"I can withdraw my rewards whenever I want."**
+No. There is no self-service withdrawal. Rewards are paid out through a
+reviewed payout request with a $50 minimum (and a $150 per-request cap without
+KYC). See [Payouts and rewards](10-payouts-and-rewards.md).
+
+**"Vouching is free reputation."**
+No. A vouch stakes your Volume capacity, is limited by that capacity, and a
+reworked vouch costs you the stake plus a penalty.
+
 ---
 
 ## Where to go next
 
 - **How the tiers interact with access:** [User roles and statuses](02-user-roles-and-statuses.md)
 - **What the cabinet shows you about your reputation:** [Platform tour - Reputation](06-platform-tour.md#reputation)
+- **How rewards turn into payouts:** [Payouts and rewards](10-payouts-and-rewards.md)
 - **KYC, 2FA, and the security behind all of this:** [Trust and safety](07-trust-and-safety.md)

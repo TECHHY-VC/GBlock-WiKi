@@ -14,12 +14,13 @@ time; jump to the journey you are trying to complete.
 1. [Onboarding](#onboarding)
 2. [Browse the dealflow](#browse-the-dealflow)
 3. [Place a sale block](#place-a-sale-block)
-4. [Guarantee a member](#guarantee-a-member)
+4. [Guarantee and vouch for members](#guarantee-and-vouch-for-members)
 5. [Run a deal thread](#run-a-deal-thread)
 6. [Manage a data room](#manage-a-data-room)
 7. [Send an invitation](#send-an-invitation)
-8. [File a complaint](#file-a-complaint)
-9. [Enable 2FA](#enable-2fa)
+8. [Request a payout](#request-a-payout)
+9. [File a complaint](#file-a-complaint)
+10. [Enable 2FA](#enable-2fa)
 
 ---
 
@@ -49,9 +50,10 @@ Invitation email
   to the cabinet.
 
 At the end of onboarding you are a **Registered** member, **Anonymous** trust
-tier, **Verified** reputation tier (0-49 Volume). What you can do next depends
-on which statuses and tiers you add. See
-[User roles and statuses](02-user-roles-and-statuses.md).
+tier, **Verified** reputation tier (0-49 Volume), with the welcome grant in
+your pocket: 30 starting reputation, or 40 plus a vouch gift if you arrived
+through an invitation. What you can do next depends on which statuses and
+tiers you add. See [User roles and statuses](02-user-roles-and-statuses.md).
 
 ---
 
@@ -155,14 +157,18 @@ sellers who maintain their listings.
 
 ---
 
-## Guarantee a member
+## Guarantee and vouch for members
 
-Vouching for another member. This is how the network grows trust without a
-centralized gatekeeper.
+Backing another member. This is how the network grows trust without a
+centralized gatekeeper. There are two instruments: **guarantees** (the Vouched
+trust path) and **vouches** (the Resident status path, delivered through the
+waitlist).
 
-**Precondition:** To guarantee someone into the **Resident** status, you must
-yourself be an active Resident. To guarantee someone into the **Vouched**
-trust tier, you must be **Verified**, and the member needs two such guarantees.
+### Guarantees (Vouched path)
+
+**Precondition:** to guarantee someone into the **Vouched** trust tier, you
+must be **Verified**, and the member needs guarantees from two Verified
+members (two is the minimum threshold, not a cap).
 
 **Step 1. Receive a guarantee request.**
 
@@ -189,7 +195,23 @@ trust violations, both of you are penalized.
 - **Violation:** three or more violations by the ward lead to revocation of the
   guarantee and reputation impact for you.
 
-This is the core of shared accountability. Do not guarantee someone you cannot
+### Vouches (Resident path)
+
+**Precondition:** you must have completed KYC. Any KYC-approved member can
+give a candidate's **first vouch**; the **decisive second vouch** — the one
+that completes Resident status — must come from a **KYC-verified Resident**.
+
+**How it works:**
+
+1. A waitlist candidate receives your vouch. You stake part of your reputation
+   capacity, and the candidate gains +10 reputation while you gain +5.
+2. When the candidate holds two qualifying vouches (at least one from a
+   Resident), their Resident status completes.
+3. If a vouch is later reworked, the staked capacity is not returned, the
+   candidate's gained reputation is clawed back plus a penalty, and repeated
+   reworks flag the case for operator review. Vouch responsibly.
+
+This is the core of shared accountability. Do not back someone you cannot
 stand behind.
 
 ---
@@ -238,9 +260,13 @@ The member-controlled Virtual Data Room (VDR). This is the project axis of
 GBlock: a place to consolidate diligence materials for an opportunity you are
 representing.
 
-**Step 1. Open a data room.**
+**Step 1. Create or open a data room.**
 
 Each data room is tied to a company/project. You open it from the cabinet.
+Creating your first Data Room is also what activates your
+[founder functions](02-user-roles-and-statuses.md#founder-functions-rolling-out)
+— the creation flow and the scoring form share one dataset, so your room
+starts with a scoring draft for the same company.
 
 **Step 2. Upload documents.**
 
@@ -256,25 +282,41 @@ You grant access to specific members. Access can be:
 - **Unlisted token:** a shareable token that lets a holder view the room
   without you naming them individually.
 
+Any link that leads to your room doubles as a referral link — see
+[Silent Data Room referrals](11-silent-dr-referral.md).
+
 **Step 4. Control capabilities.**
 
 You can toggle download permissions, revoke access, and view the scoring report
 for the project.
 
-**Step 5. Scoring report.**
+**Step 5. Scoring and the public catalog.**
 
 Each project has a deterministic scoring report combining two dimensions:
+**Potential** (0-150) and **Readiness** (0-150).
 
-- **Potential:** 0-150.
-- **Readiness:** 0-150.
+Publication to the public project catalog requires **a valid scoring and a
+completed company profile** (description, sector, and similar public fields).
+Without them, the room still works exactly as before for investors you granted
+direct access to — it just does not appear in the catalog.
 
-The scoring report is visible from the cabinet and helps members evaluate the
-project on consistent axes.
+**Scoring expiry.** If your scoring expires, the room keeps working: grants
+stay live, content stays available. What changes is visibility — the room
+leaves the catalog and the scoring placeholder is marked as expired until you
+renew. Your room limits are never recalculated retroactively.
 
-> **Roadmap note.** A self-service flow that lets a member create a data room
-> from the cabinet, automatically score the project, and list it as a
-> primary-market draft for operator eligibility review is planned and not yet
-> live. See [Roadmap and stage](09-roadmap-and-stage.md).
+**Step 6. Closing a room — two different doors.**
+
+When you are done with a room, you choose:
+
+- **Delete permanently** — documents are removed, investor grants are revoked,
+  and the room's slot is freed. If it was your one free primary-market room,
+  you can create a new one in its place.
+- **Archive** — investors keep read access to the materials, and the room
+  **does not** free its slot. Archiving is a soft close, not a removal.
+
+Rooms belong to the **company**, not to you personally: if company ownership
+changes hands, the room (and its scoring) follows the company automatically.
 
 <p align="center">
   <img src="../images/dataroom.png" alt="Data room interface" width="720" />
@@ -304,14 +346,47 @@ become a Registered member.
 
 **Step 4. Stake returns.**
 
-When the invitation activates or expires, your 10 Power returns. If the
+When the invitation activates or expires, your 10 Power returns
+(automatically, at the latest 30 days after the invite was sent). If the
 invitee misbehaves, you may face reputation impact. This is shared
 accountability applied to invitations.
 
 Referral rewards, where applicable, are tracked under **Referrals** in the
 cabinet. Reward candidates move through pending, locked, approved, released,
 and suppressed states. Rewards are paid only from confirmed non-transactional
-TECH HY revenue.
+TECH HY revenue, and reward balances are credited in a monthly batch on the
+1st of the month. See [Payouts and rewards](10-payouts-and-rewards.md).
+
+---
+
+## Request a payout
+
+Turning your reward balance into a withdrawal. There is no self-service
+withdrawal button: every payout is a reviewed request to the operator.
+
+**Step 1. Open the Wallet.**
+
+Your reward balance shows what is available to request.
+
+**Step 2. Submit a payout request.**
+
+From the wallet, submit a payout request. The minimum request is **$50**. You
+provide a **USDT (BEP-20)** destination address. Without verified KYC, a
+single request is capped at **$150**; with KYC there is no cap.
+
+**Step 3. Operator review.**
+
+The operator reviews your request in a queue. First response within one
+business day; approved payouts are sent within three business days.
+
+**Step 4. Notification with the transaction hash.**
+
+When the payout is sent, you receive a notification containing the on-chain
+transaction hash. If a request is rejected, your balance is untouched and you
+can see the reason.
+
+The full rules — limits, SLA, currencies, and what happens on rejection — are
+in [Payouts and rewards](10-payouts-and-rewards.md).
 
 ---
 
@@ -376,3 +451,4 @@ bonus. See [Trust and safety - 2FA](07-trust-and-safety.md#two-factor-authentica
 - **The rules behind every gate above:** [User roles and statuses](02-user-roles-and-statuses.md)
 - **What the cabinet looks like, page by page:** [Platform tour](06-platform-tour.md)
 - **The numbers behind Volume and Power:** [Reputation economy](05-reputation-economy.md)
+- **Payout rules in detail:** [Payouts and rewards](10-payouts-and-rewards.md)

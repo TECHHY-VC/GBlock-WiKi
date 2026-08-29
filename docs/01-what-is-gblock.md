@@ -41,8 +41,9 @@ private terminal, not a public marketplace.
 | **Seller** | Place sale blocks (a private package of assets or an opportunity), manage freshness, and review incoming access requests. |
 | **Guarantor** | Stake reputation to vouch for another member and bring them into the Resident status or Vouched trust tier. |
 | **Ambassador** | Grow the community by sending invitations and earning referral rewards. |
+| **Founder functions** | The selling side of a project: a payment account for top-ups and scoring purchases, plus Data Rooms for your company. Activated silently when you create your first Data Room. _Rolling out._ See [User roles and statuses](02-user-roles-and-statuses.md#founder-functions-rolling-out). |
 
-A single account holds all four modes. You are not a "buyer account" or a
+A single account holds all of these modes. You are not a "buyer account" or a
 "seller account"; you are a member who can act in any mode your status and trust
 tier permit. See [User roles and statuses](02-user-roles-and-statuses.md).
 
@@ -120,4 +121,5 @@ jurisdiction.
 - **Understand who can do what:** [User roles and statuses](02-user-roles-and-statuses.md)
 - **How to get in:** [Getting access](03-getting-access.md)
 - **What the experience feels like:** [User journeys](04-user-journeys.md)
+- **How rewards and payouts work:** [Payouts and rewards](10-payouts-and-rewards.md)
 - **Definitions of every term used above:** [Glossary](08-glossary.md)
