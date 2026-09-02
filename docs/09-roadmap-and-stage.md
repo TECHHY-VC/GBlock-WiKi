@@ -77,6 +77,22 @@ The following are part of the current live experience for members:
 - 2FA (TOTP, with accrual bonus).
 - Device alerts for unrecognized logins.
 - Read-only API (v1).
+- **Founder functions as a silent flag.** Automatic activation on first Data
+  Room creation or scoring submission, lifelong, no badge — unlocking top-ups
+  and scoring purchases, with the locked-wallet hint for everyone else.
+- **Data Room limits and the catalog gate.** One reusable free primary-market
+  room per member; unlimited rooms with valid scoring (one scoring = one
+  room); unlimited secondary-market rooms for KYC-verified Residents; catalog
+  listing requires valid scoring plus a completed company profile; the
+  permanent-delete vs archive choice with its slot semantics.
+- **KYC revocation handling.** A revoked verification archives excess rooms
+  while preserving existing grants (grandfathering); new grants stay closed.
+- **Silent Data Room referral engine.** Last-touch attribution across Data
+  Room links and invites, the ambassador-ladder economics, and the
+  founder-facing link metrics in the cabinet.
+- **Contact-check quarantine and covers.** Quarantine ends at contract
+  signing; recipients see neutral covers, senders see status, the operator
+  sees everything.
 
 ---
 
@@ -86,22 +102,14 @@ These are confirmed parts of the product model that are being switched on in
 stages. Some members may already see them; not everyone does yet. They are
 described throughout this wiki with a _rolling out_ marker.
 
-- **Founder functions as a silent flag.** Automatic activation on first Data
-  Room creation, lifelong, no badge — unlocking top-ups and scoring purchases,
-  with the locked-wallet hint for everyone else.
-- **Data Room limits and the catalog gate.** One reusable free primary-market
-  room per member; unlimited rooms with valid scoring (one scoring = one
-  room); unlimited secondary-market rooms for KYC-verified Residents; catalog
-  listing requires valid scoring plus a completed company profile; the
-  permanent-delete vs archive choice with its slot semantics.
 - **Payout SLA clocks.** The 1-business-day response / 3-business-day payout
   targets as enforced queue metrics.
 - **2FA enforcement for all members.**
-- **Contact-check extensions.** Quarantine ending at contract signing,
-  neutral covers for recipients, and broader language matching in the
-  detector.
+- **Contact-check extensions.** Broader language matching in the detector
+  (transliteration, mixed scripts, slang, obfuscations).
 - **Layered document watermarking** (visible + forensic) in Data Rooms.
-- **Referral tree and reward history** in the cabinet.
+- **Referral tree and reward history** in the cabinet (the tree itself is
+  live; history views are being expanded).
 
 ---
 
@@ -111,11 +119,9 @@ The following are in active development or design and are **not** yet live.
 They are described here so members know what is coming, but they should not be
 relied on today.
 
-- **Silent Data Room referral analytics.** The attribution model is defined
-  (last touch across all channels, ambassador-ladder economics, anti-abuse
-  review) and described in
-  [Silent Data Room referrals](11-silent-dr-referral.md); the engine and the
-  founder-facing link metrics are being built.
+- **Silent Data Room referral analytics.** The engine is live (see
+  [Silent Data Room referrals](11-silent-dr-referral.md)); deeper analytics
+  and reporting continue to expand.
 - **Unified Data Room + scoring flow.** One dataset for both: creating a room
   produces a scoring draft for the same company, with shared company fields
   feeding the public catalog card.
@@ -124,9 +130,13 @@ relied on today.
   and it is listed as a primary-market draft that enters operator eligibility
   review. Investors would then view the public room, express interest, and
   request access.
-- **KYC deduplication and revocation handling** as enforced platform checks
-  (duplicate identities declined; revoked verifications archiving excess
-  rooms while preserving existing grants).
+- **KYC deduplication** as an enforced platform check (duplicate identities
+  declined at verification). Revocation handling is already live.
+- **Account sleep lifecycle enforcement.** The inactivity model described in
+  [Trust and safety](07-trust-and-safety.md) — a warning phase, deactivation
+  with unpublishing of public artifacts, then deletion after 30 days of
+  inactivity, with founder functions frozen while an account sleeps — is in
+  final development and independent verification.
 - **API expansion.** The current API is read-only. Broader surface area is
   under consideration, with re-authentication and operator review applied to
   any mutating action.
